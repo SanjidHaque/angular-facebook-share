@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {ShareButton} from 'ngx-sharebuttons/button';
+import {ShareButtonDirective} from 'ngx-sharebuttons';
+
+
 
 @NgModule({
   declarations: [
@@ -10,6 +14,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
+    ShareButton,
+    ShareButtonDirective,
     AppRoutingModule
   ],
   providers: [],

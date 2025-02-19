@@ -7,13 +7,19 @@ import {
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+const cors = require('cors')
+
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
-
+app.use(cors({
+  origin: '*', // Allows requests from any origin
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allows all HTTP methods
+  allowedHeaders: 'Content-Type,Authorization' // Allows specific headers
+}));
 /**
  * Example Express Rest API endpoints can be defined here.
  * Uncomment and define endpoints as necessary.
@@ -25,6 +31,15 @@ const angularApp = new AngularNodeAppEngine();
  * });
  * ```
  */
+
+app.post('/api/update-metatags', (req, res) => {
+  res.status(200).json({metatags: []});
+})
+
+
+app.get('/api/get-metatags', (req, res) => {
+  res.status(200).json({metatags: []});
+})
 
 /**
  * Serve static files from /browser
@@ -49,6 +64,10 @@ app.use('/**', (req, res, next) => {
     .catch(next);
 });
 
+
+
+
+
 /**
  * Start the server if this module is the main entry point.
  * The server listens on the port defined by the `PORT` environment variable, or defaults to 4000.
@@ -59,6 +78,9 @@ if (isMainModule(import.meta.url)) {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }
+
+
+
 
 /**
  * Request handler used by the Angular CLI (for dev-server and during build) or Firebase Cloud Functions.

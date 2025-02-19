@@ -5,12 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {ShareButton} from 'ngx-sharebuttons/button';
 import {ShareButtonDirective} from 'ngx-sharebuttons';
+import { provideHttpClient, withInterceptorsFromDi} from '@angular/common/http';
+import { NewsComponent } from './news/news.component';
+import { SportsComponent } from './sports/sports.component';
+import { EconomicsComponent } from './economics/economics.component';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewsComponent,
+    SportsComponent,
+    EconomicsComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +26,8 @@ import {ShareButtonDirective} from 'ngx-sharebuttons';
     AppRoutingModule
   ],
   providers: [
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    provideHttpClient(withInterceptorsFromDi())
   ],
   bootstrap: [AppComponent]
 })

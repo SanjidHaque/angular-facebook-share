@@ -4,40 +4,10 @@
 <!--Thoughts:-->
 <!--1. It doesn't seem to scrap host projects index.html's default metatags at all, instead it is taking destination website's metatags-->
 
-<p>
-  <button shareButton="facebook"
-          url="https://developer.mozilla.org/en-US/docs/Glossary/Deep_copy">
-    Share on Facebook (Deep Copy)
-  </button>
-</p>
 
-<p>
-  <button shareButton="facebook"
-          url="https://medium.com/@mgechev">
-    Share on Facebook (Mincho's Medium)
-  </button>
-</p>
+<p><a routerLink="/news" routerLinkActive="active">News</a></p>
 
-<p>
-  <button shareButton="facebook"
-          url="https://incdev.xpertsolvers.com/news-details/173/a-valencia-pi%C3%B9-di-200-morti,-incerto-il-numero-dei-dispersi.-allarme-rosso-in-andalusia">
-    Share on Facebook (A Valencia più di 200 morti)
-  </button>
-</p>
+<p><a routerLink="/sports" routerLinkActive="active">Sports</a></p>
+<p><a routerLink="/economics" routerLinkActive="active">Economics</a></p>
 
-<p>
-  <button shareButton="facebook"
-          url="https://angular-router-playground.netlify.app/home">
-    Share on Facebook (Explore Angular Router)
-  </button>
-</p>
-
-
-<p>
-  <button shareButton="facebook" url="https://angular-fb-share.netlify.app/">
-    Share on Facebook (This App)
-  </button>
-</p>
-
-<p><button (click)="updateMetatags()">Update Metatags</button></p>
-
+<router-outlet></router-outlet>

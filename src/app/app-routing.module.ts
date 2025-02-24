@@ -4,25 +4,16 @@ import {AppComponent} from './app.component';
 import {NewsComponent} from './news/news.component';
 import {SportsComponent} from './sports/sports.component';
 import {EconomicsComponent} from './economics/economics.component';
+import {HomeComponent} from './home/home.component';
+import {NewsContentComponent} from './news/news-content/news-content.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: '/news',
-  //   pathMatch: 'full',
-  // },
-  {
-    path: 'news',
-    component: NewsComponent,
-  },
-  {
-    path: 'sports',
-    component: SportsComponent
-  },
-  {
-    path: 'economics',
-    component: EconomicsComponent
-  }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'news', component: NewsComponent },
+  { path: 'news/:id', component: NewsContentComponent },
+  { path: 'sports', component: SportsComponent },
+  { path: 'economics', component: EconomicsComponent }
 ];
 
 @NgModule({

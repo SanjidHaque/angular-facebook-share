@@ -9,6 +9,8 @@ import { provideHttpClient, withInterceptorsFromDi} from '@angular/common/http';
 import { NewsComponent } from './news/news.component';
 import { SportsComponent } from './sports/sports.component';
 import { EconomicsComponent } from './economics/economics.component';
+import { HomeComponent } from './home/home.component';
+import { NewsContentComponent } from './news/news-content/news-content.component';
 
 
 
@@ -17,7 +19,9 @@ import { EconomicsComponent } from './economics/economics.component';
     AppComponent,
     NewsComponent,
     SportsComponent,
-    EconomicsComponent
+    EconomicsComponent,
+    HomeComponent,
+    NewsContentComponent
   ],
   imports: [
     BrowserModule,

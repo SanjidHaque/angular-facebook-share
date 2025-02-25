@@ -9,8 +9,8 @@ import {Meta} from '@angular/platform-browser';
 })
 export class NewsContentComponent {
   constructor(private metaService: Meta) {
-    this.metaService.updateTag({property: 'og:title', content: 'News Content'});
+    this.metaService.updateTag({property: 'og:title', content: 'News Content Updated'});
     this.metaService.updateTag({property: 'og:description', content: 'News Content Description'});
-    this.metaService.updateTag({property: 'og:image', content: 'https://about.fb.com/wp-content/uploads/2024/02/Facebook-News-Update_US_AU_Header.jpg?fit=1920%2C1080'});
+    this.metaService.updateTag({property: 'og:image', content: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmFTv8XUAZTc8wRVwgZPQvMPlsLckQxtt-uQ&s'});
   }
 }

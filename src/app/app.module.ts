@@ -11,6 +11,9 @@ import { SportsComponent } from './sports/sports.component';
 import { EconomicsComponent } from './economics/economics.component';
 import { HomeComponent } from './home/home.component';
 import { NewsContentComponent } from './news/news-content/news-content.component';
+import {serverRoutes} from './app.routes.server';
+import {provideServerRendering} from '@angular/platform-server';
+import {provideServerRouting} from '@angular/ssr';
 
 
 
@@ -31,7 +34,8 @@ import { NewsContentComponent } from './news/news-content/news-content.component
   ],
   providers: [
     provideClientHydration(withEventReplay()),
-    provideHttpClient(withInterceptorsFromDi())
+    provideHttpClient(withInterceptorsFromDi()),
+    provideServerRendering()
   ],
   bootstrap: [AppComponent]
 })
